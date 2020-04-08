@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: "${springBootVersion}"
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'server'
+}
+
+description = 'server'
+
+dependencies {
+    compile project(':auth')
+    compile project(':common')
+    compile project(':pay')
+    compile project(':search')
+    compile group: 'org.postgresql', name: 'postgresql', version: "${postgreVersion}"
+}

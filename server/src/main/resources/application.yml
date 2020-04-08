@@ -1,0 +1,47 @@
+server:
+  port: ${SERVER_PORT:10000}
+spring:
+  profiles:
+    active: postgres
+  application:
+    name: server
+  redis:
+    database: 0
+    host: ${REDIS_HOST:122.51.129.79}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:}
+  mail:
+    host: smtp.163.com
+    default-encoding: utf-8
+    username: zz_ykz@163.com
+    password: THELDVVXHCSPGZTR
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+            required: true
+          timeout: 10000
+          connectiontimeout: 10000
+          writetimeout: 10000
+
+
+# mybatis
+mybatis:
+  mapper-locations: classpath*:/mybatis/mapper/*Mapper.xml
+  config-location: classpath:/mybatis/mybatis-config.xml
+  type-aliases-package: club.lazy.*.dto
+
+---
+# postgres
+spring:
+  profiles: postgres
+  datasource:
+    platform: postgres
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRES_HOST:122.51.129.79}:${POSTGRES_PORT:5432}/${POSTGRES_DB:sft}?characterEncoding=UTF-8&stringtype=unspecified
+    username: ${POSTGRES_USER:sft}
+    password: ${POSTGRES_PWD:amanda520!}
+    initialization-mode: always
+
+

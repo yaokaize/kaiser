@@ -1,0 +1,8 @@
+mybatisGenerator {
+    verbose = true
+    configFile = './src/main/resources/mybatis/generator.xml'
+}
+
+dependencies {
+    compile project(':common')
+}
