@@ -10,6 +10,9 @@ spring:
     host: ${REDIS_HOST:122.51.129.79}
     port: ${REDIS_PORT:6379}
     password: ${REDIS_PASSWORD:}
+  elasticsearch:
+    rest:
+      uris: http://localhost:9200
   mail:
     host: smtp.163.com
     default-encoding: utf-8

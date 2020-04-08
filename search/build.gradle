@@ -5,4 +5,5 @@ mybatisGenerator {
 
 dependencies {
     compile project(':common')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-elasticsearch', version: "${springBootVersion}"
 }
