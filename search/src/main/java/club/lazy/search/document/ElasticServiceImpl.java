@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Iterator;
 import java.util.List;
 
-@Service("elasticsearch")
+@Service
 public class ElasticServiceImpl implements IElasticService {
 
     private final ElasticsearchRestTemplate elasticsearchRestTemplate;

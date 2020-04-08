@@ -34,6 +34,11 @@ public class ElasticController {
         iElasticService.saveAll(list);
     }
 
+    @GetMapping("/delete")
+    public void delete(){
+        iElasticService.deleteIndex("ems");
+    }
+
     @GetMapping("/all")
     public Iterator<DocBean> all(){
         return iElasticService.findAll();

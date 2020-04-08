@@ -5,8 +5,8 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: "${springBootVersion}"
     compile group: 'org.reflections', name: 'reflections', version: '0.9.11'
 
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: "${springBootVersion}"
-    compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: "${springBootVersion}"
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-security', version: "2.2.1.RELEASE"
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-oauth2', version: "2.2.1.RELEASE"
 
     implementation 'com.auth0:java-jwt:3.8.0'
 }
