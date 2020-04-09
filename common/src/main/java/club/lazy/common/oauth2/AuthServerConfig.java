@@ -44,8 +44,9 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
             allowFormAuthenticationForClients 开启表单验证
          */
         security
-                .tokenKeyAccess("permitAll()")
-                .checkTokenAccess("isAuthenticated()")
+                .allowFormAuthenticationForClients() // 允许form表单客户端认证，允许客户端使用client_id和client_secret获取token
+                .tokenKeyAccess("permitAll()")  // 通过验证返回token信息
+                .checkTokenAccess("isAuthenticated()") // 获取token请求不进行拦截
                 .allowFormAuthenticationForClients();
     }
 
